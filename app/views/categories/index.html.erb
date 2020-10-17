@@ -1,0 +1,26 @@
+<h1 align="center">Listing all Categories </h1>
+<div class="d-flex justify-content-center">
+  <%= will_paginate %>
+</div>
+</br>
+<% @categories.each do |category| %>
+<!-- <div class='row justify-content-center'>
+  <div class="col-8 col-xs-offset-2"> -->
+    <ul class="listing">
+      <div class='row justify-content-center'>
+        <div class="col-4 col-xs-offset-2">
+          <div class="card bg-light text-dark card-lg">
+            <li class="article-title center">
+              <%= link_to  "#{category.name}".capitalize ,category_path(category)%>
+            </li>
+            <li class="d-flex justify-content-center"><small><%= pluralize(category.articles.count,"article") %> </small> </li>
+
+          </div>
+        </div>
+      </div>
+    </ul>
+<% end %>
+</br>
+<div class="d-flex justify-content-center">
+  <%= will_paginate %>
+</div>

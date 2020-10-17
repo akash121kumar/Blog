@@ -1,0 +1,14 @@
+<h1 align ="center"> Welcome to <%= @user.username %>'s page</h1>
+<div class="row justify-content-center">
+  <div >
+    <%= gravatar_for @user , size: 150 %>
+  </div>
+</div>
+</br>
+
+<h4 align= "center"><%= @user.username%>'s articles </h4>
+<div class="d-flex justify-content-center">
+  <%= will_paginate @user_articles %>
+</div>
+
+<%= render 'articles/article' , obj: @user_articles %>

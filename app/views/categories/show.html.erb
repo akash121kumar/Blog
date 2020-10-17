@@ -1,0 +1,18 @@
+<h1 align="center"><%= "Category:"+ (@category.name.capitalize) %></h1>
+<div class="d-flex justify-content-center">
+  <% if logged_in? and current_user.admin? %>
+  <span class="badge badge-light"><%=link_to "Edit Category name ",edit_category_path(@category) %></span>
+  <% end %>
+</div>
+<div class="d-flex justify-content-center">
+  <%= will_paginate @category_articles %>
+</div>
+
+<div class="d-flex justify-content-center">
+  </br>
+  <%= "No articles in this space" if !@category.articles.any? %>
+</div>
+<%= render 'articles/article', obj: @category_articles %>
+<div class="d-flex justify-content-center">
+  <%= will_paginate @category_articles %>
+</div>

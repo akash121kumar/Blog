@@ -1,0 +1,6 @@
+<div class="center jumbotron">
+  <h1 class="display-4">Blog</h1>
+  <% if !logged_in? %>
+  <%= link_to "SignUp now",signup_path,class: "btn btn-primary btn-lg btn-xlarge" %>
+  <% end %>
+</div>
